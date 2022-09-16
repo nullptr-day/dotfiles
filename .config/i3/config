@@ -30,7 +30,7 @@ set $myTerm LIBGL_ALWAYS_SOFTWARE=true GALLIUM_DRIVER=llvmpipe kitty
 bindsym $mod+Return exec $myTerm
 
 # kill focused window
-bindsym $mod+Shift+q kill
+bindsym $mod+q kill
 
 # start program launcher
 bindsym $mod+d exec --no-startup-id rofi -combi-modi window -icon-theme "Papirus" -show-icons -show drun
