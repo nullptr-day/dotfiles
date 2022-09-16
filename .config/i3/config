@@ -24,7 +24,9 @@ font xft:URWGothic-Book 11
 floating_modifier $mod
 
 # start a $myTerm
-set $myTerm alacritty
+# set $myTerm kitty
+set $myTerm LIBGL_ALWAYS_SOFTWARE=true GALLIUM_DRIVER=llvmpipe kitty
+# set $myTerm i3-sensible-terminal
 bindsym $mod+Return exec $myTerm
 
 # kill focused window
@@ -44,7 +46,18 @@ bar {
 	font pango:Inconsolata 14
 	position top
 	tray_output none
-	status_command bumblebee-status -m network memory date time pasink battery system -t iceberg-powerline
+
+    i3bar_command i3bar -t
+    colors {
+        background #00000000
+        #                   border  backgr. text
+        focused_workspace   #CECECE #f50a7765 #f1f1f1
+        active_workspace    #CECECE #39166650 #f1f1f1
+        inactive_workspace  #333333 #39166630 #888888
+        urgent_workspace    #f1f1f1 #de028e #ffffff
+    }
+	
+	status_command bumblebee-status -m network memory date time pasink battery system -t nord-colorful
 }
 
 ################################################################################################
@@ -93,19 +106,17 @@ bindsym $mod+b workspace back_and_forth
 bindsym $mod+Shift+b move container to workspace back_and_forth; workspace back_and_forth
 
 # split orientation
-bindsym $mod+h split h;exec notify-send 'tile horizontally'
-bindsym $mod+v split v;exec notify-send 'tile vertically'
-# bindsym $mod+y split toggle ####--->>> FIX THIS
+bindsym $mod+h split toggle
 
 # toggle fullscreen mode for the focused container
 bindsym $mod+f fullscreen toggle
 
 # focus the parent container
-bindsym $mod+a focus parent
+# bindsym $mod+a focus parent
 
 #navigate workspaces next / previous
-bindsym $mod+Ctrl+Right workspace next
-bindsym $mod+Ctrl+Left workspace prev
+# bindsym $mod+Ctrl+Right workspace next
+# bindsym $mod+Ctrl+Left workspace prev
 
 # Workspace names
 # to display names or symbols instead of plain workspace numbers you can use
@@ -206,20 +217,20 @@ mode "$mode_system" {
 # Resize window (you can also use the mouse for that)
 bindsym $mod+r mode "resize"
 mode "resize" {
-        bindsym l resize shrink width 4 px or 4 ppt
-        bindsym i resize grow height 4 px or 4 ppt
-        bindsym k resize shrink height 4 px or 4 ppt
-        bindsym j resize grow width 4 px or 4 ppt
+	bindsym l resize shrink width 4 px or 4 ppt
+	bindsym i resize grow height 4 px or 4 ppt
+	bindsym k resize shrink height 4 px or 4 ppt
+	bindsym j resize grow width 4 px or 4 ppt
 
-        # same bindings, but for the arrow keys
-        bindsym Left resize shrink width 10 px or 10 ppt
-        bindsym Down resize grow height 10 px or 10 ppt
-        bindsym Up resize shrink height 10 px or 10 ppt
-        bindsym Right resize grow width 10 px or 10 ppt
+	# same bindings, but for the arrow keys
+	bindsym Left resize shrink width 10 px or 10 ppt
+	bindsym Down resize grow height 10 px or 10 ppt
+	bindsym Up resize shrink height 10 px or 10 ppt
+	bindsym Right resize grow width 10 px or 10 ppt
 
-        # exit resize mode: Enter or Escape
-        bindsym Return mode "default"
-        bindsym Escape mode "default"
+	# exit resize mode: Enter or Escape
+	bindsym Return mode "default"
+	bindsym Escape mode "default"
 }
 
 # Lock screen
@@ -264,8 +275,8 @@ set_from_resource $term_color15    color15
 #############################
 
 # Set inner/outer gaps
-gaps inner 10
-gaps outer -4
+gaps inner 14
+gaps outer 5
 
 # Additionally, you can issue commands with the following syntax. This is useful to bind keys to changing the gap size.
 # gaps inner|outer current|all set|plus|minus <px>
@@ -278,44 +289,3 @@ smart_gaps on
 # Smart borders (draw borders around container only if it is not the only container on this workspace) 
 # on|no_gaps (on=always activate and no_gaps=only activate if the gap size to the edge of the screen is 0)
 smart_borders on
-
-# Press $mod+Shift+g to enter the gap mode. 
-# Choose o or i for modifying outer/inner gaps.
-# Press one of + / - (in-/decrement for current workspace) 
-# or 0 (remove gaps for current workspace). If you also press Shift 
-# with these keys, the change will be global for all workspaces.
-set $mode_gaps Gaps: (o) outer, (i) inner
-set $mode_gaps_outer Outer Gaps: +|-|0 (local), Shift + +|-|0 (global)
-set $mode_gaps_inner Inner Gaps: +|-|0 (local), Shift + +|-|0 (global)
-bindsym $mod+Shift+g mode "$mode_gaps"
-
-mode "$mode_gaps" {
-        bindsym o      mode "$mode_gaps_outer"
-        bindsym i      mode "$mode_gaps_inner"
-        bindsym Return mode "default"
-        bindsym Escape mode "default"
-}
-mode "$mode_gaps_inner" {
-        bindsym plus  gaps inner current plus 5
-        bindsym minus gaps inner current minus 5
-        bindsym 0     gaps inner current set 0
-
-        bindsym Shift+plus  gaps inner all plus 5
-        bindsym Shift+minus gaps inner all minus 5
-        bindsym Shift+0     gaps inner all set 0
-
-        bindsym Return mode "default"
-        bindsym Escape mode "default"
-}
-mode "$mode_gaps_outer" {
-        bindsym plus  gaps outer current plus 5
-        bindsym minus gaps outer current minus 5
-        bindsym 0     gaps outer current set 0
-
-        bindsym Shift+plus  gaps outer all plus 5
-        bindsym Shift+minus gaps outer all minus 5
-        bindsym Shift+0     gaps outer all set 0
-
-        bindsym Return mode "default"
-        bindsym Escape mode "default"
-}

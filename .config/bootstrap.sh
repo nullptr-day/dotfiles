@@ -5,13 +5,13 @@
 cd $HOME
 
 # basics
-sudo apt install -y git exa tree micro nnn
+sudo apt install -y git kitty exa tree micro nnn
 sudo apt install -y ninja-build cmake
 sudo apt install -y rofi nitrogen picom lxappearance gtk-chtheme
 sudo apt install -y fonts-powerline fonts-font-awesome fonts-jetbrains-mono fonts-firacode
 sudo apt install -y chromium-browser
 sudo apt install -y libxcb-render0-dev libffi-dev curl
-sudo apt install -y python3 cargo python3-pip python3-tk python-cffi
+sudo apt install -y python3 python3-pip python3-tk python-cffi
 
 # libs  for building stuff
 sudo apt install -y pkg-config libfreetype6-dev libfontconfig1-dev libxcb-xfixes0-dev libxkbcommon-dev gzip
@@ -27,20 +27,6 @@ sudo pip install bumblebee-status
 sudo pip install iw
 sudo pip install netifaces
 sudo pip install flashfocus
-
-## ------------------------------------------------------------------------------------------------
-## Alacritty
-## ------------------------------------------------------------------------------------------------
-
-cd $HOME
-git clone https://github.com/alacritty/alacritty.git
-cd alacritty
-curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
-source $HOME/.cargo/env && rustup default nightly && rustup update
-cargo build --release
-sudo cp target/release/alacritty /usr/local/bin
-mkdir -p ${HOME}/.bash_completion
-cp extra/completions/alacritty.bash ${HOME}/.bash_completion/alacritty
 
 ## ------------------------------------------------------------------------------------------------
 ## Starship
