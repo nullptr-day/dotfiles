@@ -34,7 +34,7 @@ bindsym $mod+Shift+q kill
 bindsym $mod+d exec --no-startup-id rofi -show run
 
 # Apps Launched with <SUPER> + <SHIFT> + <KEYPAD 1-9>
-# bindsym $mod+Shift+KP_9 exec $myTerm -e gedit ~/.config/i3/config
+bindsym $mod+Shift+9 exec $myTerm -e micro
 
 ################################################################################################
 ## bar-section
@@ -228,8 +228,8 @@ bindsym $mod+9 exec --no-startup-id blurlock
 # Autostart applications
 exec --no-startup-id nm-applet
 exec_always --no-startup-id picom
-exec_always --no-startup-id nitrogen --restore
 exec_always --no-startup-id flashfocus
+exec_always --no-startup-id nitrogen --restore
 
 set_from_resource $term_background background
 set_from_resource $term_foreground foreground
