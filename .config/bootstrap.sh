@@ -33,15 +33,14 @@ sudo pip install flashfocus
 ## ------------------------------------------------------------------------------------------------
 
 cd $HOME
-cd /tmp
 git clone https://github.com/alacritty/alacritty.git
 cd alacritty
 curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
 source $HOME/.cargo/env && rustup default nightly && rustup update
 cargo build --release
 sudo cp target/release/alacritty /usr/local/bin
-mkdir -p ~/.bash_completion
-cp extra/completions/alacritty.bash ~/.bash_completion/alacritty
+mkdir -p ${HOME}/.bash_completion
+cp extra/completions/alacritty.bash ${HOME}/.bash_completion/alacritty
 
 ## ------------------------------------------------------------------------------------------------
 ## Starship
@@ -75,8 +74,6 @@ function config {
 }
 
 mkdir -p .config-backup
-config checkout
-
 if [ $? = 0 ]; then
   echo "Checked out config.";
   else
