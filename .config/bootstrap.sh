@@ -6,16 +6,15 @@ cd $HOME
 
 # basics
 sudo apt install -y git kitty exa tree micro nnn
-sudo apt install -y ninja-build cmake
+sudo apt install -y ninja-build cmake curl
 sudo apt install -y rofi nitrogen picom lxappearance gtk-chtheme
 sudo apt install -y fonts-powerline fonts-font-awesome fonts-jetbrains-mono fonts-firacode
 sudo apt install -y chromium-browser
-sudo apt install -y libxcb-render0-dev libffi-dev curl
 sudo apt install -y python3 python3-pip python3-tk python-cffi
 
 # libs  for building stuff
 sudo apt install -y pkg-config libfreetype6-dev libfontconfig1-dev libxcb-xfixes0-dev libxkbcommon-dev gzip
-sudo apt install -y meson libxcb1-dev libxcb-keysyms1-dev libpango1.0-dev
+sudo apt install -y libxcb1-dev libxcb-keysyms1-dev libpango1.0-dev libxcb-render0-dev libffi-dev
 sudo apt install -y libxcb-util0-dev libxcb-icccm4-dev libyajl-dev
 sudo apt install -y libstartup-notification0-dev libxcb-randr0-dev
 sudo apt install -y libev-dev libxcb-cursor-dev libxcb-xinerama0-dev
