@@ -33,7 +33,8 @@ bindsym $mod+Return exec $myTerm
 bindsym $mod+Shift+q kill
 
 # start program launcher
-bindsym $mod+d exec --no-startup-id rofi -show run
+bindsym $mod+d exec --no-startup-id rofi -combi-modi window -icon-theme "Papirus" -show-icons -show drun
+
 
 # Apps Launched with <SUPER> + <SHIFT> + <KEYPAD 1-9>
 bindsym $mod++m exec $myTerm -e micro
