@@ -58,7 +58,7 @@ bar {
         urgent_workspace    #f1f1f1 #de028e #ffffff
     }
 	
-	status_command bumblebee-status -m network memory date time pasink battery system -t nord-colorful
+	status_command $HOME/.local/bin/bumblebee-status -m network memory date time pasink battery system -t nord-colorful
 }
 
 ################################################################################################
