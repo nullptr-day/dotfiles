@@ -5,7 +5,7 @@
 cd $HOME
 
 # basics
-sudo apt install -y git kitty exa tree micro nnn
+sudo apt install -y git kitty exa tree micro nnn htop
 sudo apt install -y ninja-build cmake curl meson
 sudo apt install -y rofi nitrogen picom lxappearance gtk-chtheme
 sudo apt install -y fonts-powerline fonts-font-awesome fonts-jetbrains-mono fonts-firacode
