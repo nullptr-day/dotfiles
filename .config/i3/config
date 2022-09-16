@@ -34,7 +34,7 @@ bindsym $mod+Shift+q kill
 bindsym $mod+d exec --no-startup-id rofi -show run
 
 # Apps Launched with <SUPER> + <SHIFT> + <KEYPAD 1-9>
-bindsym $mod+Shift+9 exec $myTerm -e micro
+bindsym $mod++m exec $myTerm -e micro
 
 ################################################################################################
 ## bar-section
