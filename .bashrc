@@ -4,6 +4,7 @@ export HISTCONTROL=ignoredups:erasedups           # no duplicate entries
 export EDITOR="micro"                             # $EDITOR use nano in terminal
 export VISUAL="micro"                             # $VISUAL use gedit in GUI mode
 export MANPAGER="less"
+export PATH="$HOME/.local/bin:$PATH"
 
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
@@ -129,6 +130,3 @@ alias config="/usr/bin/git --git-dir=$HOME/.cfg --work-tree=$HOME"
 
 ### SETTING THE STARSHIP PROMPT ###
 eval "$(starship init bash)"
-
-. "$HOME/.cargo/env"
-source ~/.bash_completion/alacritty

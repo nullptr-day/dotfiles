@@ -22,10 +22,10 @@ sudo apt install -y libxcb-xkb-dev libxkbcommon-dev libxkbcommon-x11-dev
 sudo apt install -y autoconf libxcb-xrm0 libxcb-xrm-dev automake libxcb-shape0-dev
 
 # bar
-sudo pip install bumblebee-status
-sudo pip install iw
-sudo pip install netifaces
-sudo pip install flashfocus
+pip install --user bumblebee-status
+pip install --user iw
+pip install --user netifaces
+pip install --user flashfocus
 
 ## ------------------------------------------------------------------------------------------------
 ## Get the wallpapers
