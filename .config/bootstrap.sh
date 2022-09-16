@@ -1,19 +1,12 @@
-
-## ------------------------------------------------------------------------------------------------
-## Dotfiles config from scratch
-## ------------------------------------------------------------------------------------------------
-
-# git init --bare $HOME/.cfg
-# alias config='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
-# config config --local status.showUntrackedFiles no
-
 ## ------------------------------------------------------------------------------------------------
 ## Basic utils and libraries
 ## ------------------------------------------------------------------------------------------------
 
+cd $HOME
+
 # basics
-sudo apt install -y exa tree micro nnn
-sudo apt install -y git ninja-build cmake
+sudo apt install -y git exa tree micro nnn
+sudo apt install -y ninja-build cmake
 sudo apt install -y rofi nitrogen picom lxappearance gtk-chtheme
 sudo apt install -y fonts-powerline fonts-font-awesome fonts-jetbrains-mono fonts-firacode
 sudo apt install -y chromium-browser
@@ -39,6 +32,7 @@ sudo pip install flashfocus
 ## Alacritty
 ## ------------------------------------------------------------------------------------------------
 
+cd $HOME
 cd /tmp
 git clone https://github.com/alacritty/alacritty.git
 cd alacritty
@@ -53,6 +47,7 @@ cp extra/completions/alacritty.bash ~/.bash_completion/alacritty
 ## Starship
 ## ------------------------------------------------------------------------------------------------
 
+cd $HOME
 curl -sS https://starship.rs/install.sh | sh
 
 ## ------------------------------------------------------------------------------------------------
@@ -66,3 +61,28 @@ mkdir -p build && cd build
 meson ..
 ninja
 sudo meson install
+
+## ------------------------------------------------------------------------------------------------
+## Get the dotfiles
+## ------------------------------------------------------------------------------------------------
+
+cd $HOME
+
+git clone --bare https://github.com/nullptr-day/dotfiles.git $HOME/.cfg
+
+function config {
+   /usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME $@
+}
+
+mkdir -p .config-backup
+config checkout
+
+if [ $? = 0 ]; then
+  echo "Checked out config.";
+  else
+    echo "Backing up pre-existing dot files.";
+    config checkout 2>&1 | egrep "\s+\." | awk {'print $1'} | xargs -I{} mv {} .config-backup/{}
+fi;
+
+config checkout
+config config status.showUntrackedFiles no
