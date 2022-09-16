@@ -6,11 +6,11 @@ cd $HOME
 
 # basics
 sudo apt install -y git kitty exa tree micro nnn
-sudo apt install -y ninja-build cmake curl
+sudo apt install -y ninja-build cmake curl meson
 sudo apt install -y rofi nitrogen picom lxappearance gtk-chtheme
 sudo apt install -y fonts-powerline fonts-font-awesome fonts-jetbrains-mono fonts-firacode
 sudo apt install -y chromium-browser
-sudo apt install -y python3 python3-pip python3-tk python-cffi
+sudo apt install -y python3 python3-pip python3-tk
 
 # libs  for building stuff
 sudo apt install -y pkg-config libfreetype6-dev libfontconfig1-dev libxcb-xfixes0-dev libxkbcommon-dev gzip
@@ -31,7 +31,7 @@ sudo pip install flashfocus
 ## Get the wallpapers
 ## ------------------------------------------------------------------------------------------------
 
-git clone git@gitlab.com:dwt1/wallpapers.git .wallpapers
+git clone https://gitlab.com/dwt1/wallpapers.git .wallpapers
 
 ## ------------------------------------------------------------------------------------------------
 ## Starship
@@ -65,12 +65,12 @@ function config {
 }
 
 mkdir -p .config-backup
-if [ $? = 0 ]; then
-  echo "Checked out config.";
-  else
-    echo "Backing up pre-existing dot files.";
-    config checkout 2>&1 | egrep "\s+\." | awk {'print $1'} | xargs -I{} mv {} .config-backup/{}
-fi;
+echo "Backing up pre-existing dot files.";
+config checkout 2>&1 | egrep "\s+\." | awk {'print $1'} | xargs -I{} mv {} .config-backup/{}
+
+rm .bashrc
 
 config checkout
 config config status.showUntrackedFiles no
+
+echo "Checked out config.";
