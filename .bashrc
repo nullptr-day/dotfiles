@@ -130,54 +130,5 @@ alias config="/usr/bin/git --git-dir=$HOME/.cfg --work-tree=$HOME"
 ### SETTING THE STARSHIP PROMPT ###
 eval "$(starship init bash)"
 
-##
-# sudo apt install fish git exa tree
-# sudo apt install fonts-jetbrains-mono
-# sudo apt install lxappearance gtk-chtheme
-# sudo apt install micro
-# sudo apt install ninja-build
-# sudo apt install polybar rofi nitrogen compton
-
-### INITIAL CONFIG SETUP FROM SCRATCH
-# git init --bare $HOME/.cfg
-# alias config='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
-# config config --local status.showUntrackedFiles no
-
-# refresh font cache
-# fc-cache -f -v
-
-### Alacritty
-# git clone https://github.com/alacritty/alacritty.git
-# cd alacritty
-# curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
-# source $HOME/.cargo/env && rustup default nightly && rustup update
-# sudo apt install cmake pkg-config libfreetype6-dev libfontconfig1-dev libxcb-xfixes0-dev libxkbcommon-dev python3 gzip
-# cargo build --release
-# sudo cp target/release/alacritty /usr/local/bin
-# mkdir -p ~/.bash_completion
-# cp extra/completions/alacritty.bash ~/.bash_completion/alacritty
-
-### Starship
-## curl -sS https://starship.rs/install.sh | sh
-## - install Fira Code from https://www.nerdfonts.com/font-downloads
-
-### i3-gaps
-# sudo apt install meson
-# sudo apt install libxcb1-dev libxcb-keysyms1-dev libpango1.0-dev \
-#                  libxcb-util0-dev libxcb-icccm4-dev libyajl-dev \
-#                  libstartup-notification0-dev libxcb-randr0-dev \
-#                  libev-dev libxcb-cursor-dev libxcb-xinerama0-dev \
-#                  libxcb-xkb-dev libxkbcommon-dev libxkbcommon-x11-dev \
-#                  autoconf libxcb-xrm0 libxcb-xrm-dev automake libxcb-shape0-dev
-
-# clone the repository
-# git clone https://www.github.com/Airblader/i3 i3-gaps
-# cd i3-gaps
-
-# compile
-# mkdir -p build && cd build
-# meson ..
-# ninja
-# sudo meson install
 . "$HOME/.cargo/env"
 source ~/.bash_completion/alacritty
