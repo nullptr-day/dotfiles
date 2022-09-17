@@ -5,11 +5,6 @@ export EDITOR="/usr/bin/micro"
 export VISUAL="/usr/bin/micro"
 export MANPAGER="less"
 
-# nnn configuration
-export NNN_FIFO="/tmp/nnn.fifo"
-export NNN_FCOLORS='0000E6310000000000000000'
-export NNN_PLUG='p:preview-tui'
-
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
 
