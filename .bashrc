@@ -1,10 +1,9 @@
 ### EXPORT
 export TERM="xterm-256color"                      # getting proper colors
 export HISTCONTROL=ignoredups:erasedups           # no duplicate entries
-export EDITOR="micro"                             # $EDITOR use nano in terminal
-export VISUAL="micro"                             # $VISUAL use gedit in GUI mode
+export EDITOR="/usr/bin/micro"
+export VISUAL="/usr/bin/micro"
 export MANPAGER="less"
-export PATH="$HOME/.local/bin:$PATH"
 
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
@@ -55,9 +54,6 @@ shopt -s dotglob
 shopt -s histappend     # do not overwrite history
 shopt -s expand_aliases # expand aliases
 shopt -s checkwinsize   # checks term size when bash regains control
-
-#ignore upper and lowercase when TAB completion
-bind "set completion-ignore-case on"
 
 ### ARCHIVE EXTRACTION
 # usage: ex <file>

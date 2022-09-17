@@ -11,11 +11,6 @@ new_float normal
 # Hide borders
 hide_edge_borders none
 
-# change borders
-bindsym $mod+u border none
-bindsym $mod+y border pixel 1
-bindsym $mod+n border normal
-
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
 font xft:URWGothic-Book 11
@@ -37,7 +32,8 @@ bindsym $mod+d exec --no-startup-id rofi -combi-modi window -icon-theme "Papirus
 
 
 # Apps Launched with <SUPER> + <SHIFT> + <KEYPAD 1-9>
-bindsym $mod++m exec $myTerm -e micro
+bindsym $mod+m exec $myTerm -e micro
+bindsym $mod+n exec $myTerm -e nnn
 
 ################################################################################################
 ## bar-section
@@ -123,9 +119,9 @@ bindsym $mod+f fullscreen toggle
 # to display names or symbols instead of plain workspace numbers you can use
 # something like: set $ws1 1:mail
 #                 set $ws2 2:
-set $ws1 1
-set $ws2 2
-set $ws3 3
+set $ws1 1 
+set $ws2 2 
+set $ws3 3 
 set $ws4 4
 set $ws5 5
 set $ws6 6
