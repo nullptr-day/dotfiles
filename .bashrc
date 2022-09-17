@@ -124,5 +124,8 @@ alias newtag='git tag -a'
 # bare git repo alias for dotfiles
 alias config="/usr/bin/git --git-dir=$HOME/.cfg --work-tree=$HOME"
 
-### SETTING THE STARSHIP PROMPT ###
+# starship config
 eval "$(starship init bash)"
+
+# jump config
+eval "$(jump shell)"
