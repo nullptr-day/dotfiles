@@ -48,7 +48,7 @@ bar {
     colors {
         background #00000000
         #                   border  backgr. text
-        focused_workspace   #CECECE #f50a7765 #f1f1f1
+        focused_workspace   #FFCECE #f50a7765 #f1f1f1
         active_workspace    #CECECE #39166650 #f1f1f1
         inactive_workspace  #333333 #39166630 #888888
         urgent_workspace    #f1f1f1 #de028e #ffffff
@@ -259,13 +259,13 @@ set_from_resource $term_color14    color14
 set_from_resource $term_color15    color15
 
 # Theme colors
-# class                   border  backgr. text    indic.   child_border
-  client.focused          #556064 #556064 #80FFF9 #FDF6E3
-  client.focused_inactive #2F3D44 #2F3D44 #AD69AF #454948
-  client.unfocused        #2F3D44 #2F3D44 #AD69AF #454948
-  client.urgent           #CB4B16 #FDF6E3 #AD69AF #268BD2
-  client.placeholder      #000000 #0c0c0c #ffffff #000000 
-  client.background       #2B2C2B
+# class                 border  backgr. text    indic.   child_border
+client.focused          #00aaaa #556064 #80FFF9 #FDF6E3  #00aaaa
+client.focused_inactive #2F3D44 #2F3D44 #AD69AF #454948
+client.unfocused        #2F3D44 #2F3D44 #AD69AF #454948
+client.urgent           #CB4B16 #FDF6E3 #AD69AF #268BD2
+client.placeholder      #000000 #0c0c0c #ffffff #000000 
+client.background       #2B2C2B
 
 #############################
 ### settings for i3-gaps: ###

@@ -9,9 +9,9 @@ sudo apt install -y git kitty exa tree micro htop
 sudo apt install -y ninja-build cmake curl meson
 sudo apt install -y rofi nitrogen picom lxappearance gtk-chtheme
 sudo apt install -y fonts-powerline fonts-font-awesome fonts-jetbrains-mono fonts-firacode
-sudo apt install -y chromium-browser
 sudo apt install -y python3 python3-pip python3-tk
 sudo apt install -y imagemagick bat
+sudo apt install -y qutebrowser
 
 # libs  for building stuff
 sudo apt install -y pkg-config libfreetype6-dev libfontconfig1-dev libxcb-xfixes0-dev libxkbcommon-dev gzip

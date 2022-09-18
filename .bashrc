@@ -129,3 +129,5 @@ eval "$(starship init bash)"
 
 # jump config
 eval "$(jump shell)"
+
+.config/bars
