@@ -5,7 +5,7 @@ set $mod Mod1
 # workspace_layout tabbed <stacking|tabbed>
 
 # Configure border style <normal|1pixel|pixel xx|none|pixel>
-new_window pixel 2
+new_window pixel 4
 new_float normal
 
 # Hide borders
@@ -237,7 +237,7 @@ bindsym $mod+w exec --no-startup-id nitrogen --set-zoom-fill --random $HOME/.wal
 # Autostart applications
 exec --no-startup-id nm-applet
 exec --no-startup-id nitrogen --set-zoom-fill --random $HOME/.wallpapers --save; sleep 1; picom --config ~/.config/picom/picom.conf
-exec --no-startup-id flashfocus
+# exec --no-startup-id flashfocus
 
 set_from_resource $term_background background
 set_from_resource $term_foreground foreground
@@ -281,7 +281,7 @@ gaps outer 10
 # gaps outer all plus 5
 
 # Smart gaps (gaps used if only more than one container on the workspace)
-smart_gaps on
+smart_gaps off
 
 # Smart borders (draw borders around container only if it is not the only container on this workspace) 
 # on|no_gaps (on=always activate and no_gaps=only activate if the gap size to the edge of the screen is 0)

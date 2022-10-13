@@ -24,3 +24,8 @@ export VISUAL="/usr/bin/micro"
 export NNN_FIFO="/tmp/nnn.fifo"
 export NNN_FCOLORS='0000E6310000000000000000'
 export NNN_PLUG='p:preview-tui;j:autojump'
+
+
+# Added by Toolbox App
+export PATH="$PATH:/home/enrique/.local/share/JetBrains/Toolbox/scripts"
+
