@@ -130,4 +130,7 @@ eval "$(starship init bash)"
 # jump config
 eval "$(jump shell)"
 
+# add git completions
+source /usr/share/bash-completion/completions/git
+
 .config/bars
