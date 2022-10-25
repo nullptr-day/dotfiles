@@ -21,18 +21,13 @@ sudo apt install -y libstartup-notification0-dev libxcb-randr0-dev libreadline-d
 sudo apt install -y libev-dev libxcb-cursor-dev libxcb-xinerama0-dev
 sudo apt install -y libxcb-xkb-dev libxkbcommon-dev libxkbcommon-x11-dev
 sudo apt install -y autoconf libxcb-xrm0 libxcb-xrm-dev automake libxcb-shape0-dev
+sudo apt install -y arandr autorandr
 
 # bar
 pip install --user bumblebee-status
 pip install --user iw
 pip install --user netifaces
 pip install --user flashfocus
-
-## ------------------------------------------------------------------------------------------------
-## Get the wallpapers
-## ------------------------------------------------------------------------------------------------
-
-git clone https://gitlab.com/nullptr-day/wallpapers.git .wallpapers
 
 ## ------------------------------------------------------------------------------------------------
 ## Starship
