@@ -19,9 +19,7 @@ font xft:URWGothic-Book 11
 floating_modifier $mod
 
 # start a $myTerm
-# set $myTerm kitty
-set $myTerm LIBGL_ALWAYS_SOFTWARE=true GALLIUM_DRIVER=llvmpipe kitty
-# set $myTerm i3-sensible-terminal
+set $myTerm kitty
 bindsym $mod+Return exec $myTerm
 
 # kill focused window
@@ -237,7 +235,8 @@ bindsym $mod+w exec --no-startup-id nitrogen --set-zoom-fill --random $HOME/.wal
 # Autostart applications
 exec --no-startup-id nm-applet
 exec --no-startup-id nitrogen --set-zoom-fill --random $HOME/.wallpapers --save; sleep 1; picom --config ~/.config/picom/picom.conf
-# exec --no-startup-id flashfocus
+exec --no-startup-id setxkbmap -layout us,es
+exec --no-startup-id setxkbmap -option 'grp:alt_shift_toggle'
 
 set_from_resource $term_background background
 set_from_resource $term_foreground foreground

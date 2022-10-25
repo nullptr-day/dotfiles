@@ -32,7 +32,7 @@ pip install --user flashfocus
 ## Get the wallpapers
 ## ------------------------------------------------------------------------------------------------
 
-git clone https://gitlab.com/dwt1/wallpapers.git .wallpapers
+git clone https://gitlab.com/nullptr-day/wallpapers.git .wallpapers
 
 ## ------------------------------------------------------------------------------------------------
 ## Starship
