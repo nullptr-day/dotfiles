@@ -27,3 +27,8 @@ export NNN_PLUG='p:preview-tui;j:autojump'
 
 # Allow keyboard layout toggle
 setxkbmap -layout us,es -option grp:alt_shift_toggle
+
+
+# Added by Toolbox App
+export PATH="$PATH:/home/enrique/.local/share/JetBrains/Toolbox/scripts"
+
