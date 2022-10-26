@@ -133,4 +133,5 @@ eval "$(jump shell)"
 # add git completions
 source /usr/share/bash-completion/completions/git
 
-.config/bars
+# decoration
+$HOME/.config/bars
