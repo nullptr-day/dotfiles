@@ -141,6 +141,9 @@ config.set('content.javascript.enabled', True, 'chrome://*/*')
 # Type: Bool
 config.set('content.javascript.enabled', True, 'qute://*/*')
 
+config.set('fonts.default_size', '10pt')
+config.set('fonts.web.size.default', 20)
+
 # Directory to save downloads to. If unset, a sensible OS-specific
 # default is used.
 # Type: Directory
@@ -150,12 +153,15 @@ c.downloads.location.directory = '~/Downloads'
 config.bind('t', 'set-cmd-text -s :open -t')
 config.bind('xx', 'config-cycle statusbar.show always never;; config-cycle tabs.show always never')
 
-config.bind('Ctrl-1', 'tab-focus 1')
-config.bind('Ctrl-2', 'tab-focus 2')
-config.bind('Ctrl-3', 'tab-focus 3')
-config.bind('Ctrl-4', 'tab-focus 4')
-config.bind('Ctrl-5', 'tab-focus 5')
-config.bind('Ctrl-6', 'tab-focus 6')
-config.bind('Ctrl-7', 'tab-focus 7')
-config.bind('Ctrl-8', 'tab-focus 8')
-config.bind('Ctrl-9', 'tab-focus 9')
+config.bind('<Ctrl-1>', 'tab-focus 1')
+config.bind('<Ctrl-2>', 'tab-focus 2')
+config.bind('<Ctrl-3>', 'tab-focus 3')
+config.bind('<Ctrl-4>', 'tab-focus 4')
+config.bind('<Ctrl-5>', 'tab-focus 5')
+config.bind('<Ctrl-6>', 'tab-focus 6')
+config.bind('<Ctrl-7>', 'tab-focus 7')
+config.bind('<Ctrl-8>', 'tab-focus 8')
+config.bind('<Ctrl-9>', 'tab-focus 9')
+config.bind('j', 'tab-prev')
+config.bind('l', 'tab-next')
+config.bind('h', 'back')
